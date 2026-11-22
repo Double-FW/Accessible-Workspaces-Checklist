@@ -1,61 +1,66 @@
+---
+title: "Accessible workspaces"
+version: "1.2.0"
+updated: "2026-11-22"
+owner: "Double FW Ltd"
+license: "MIT"
+language: "en-GB"
+status: "editorial_guidance_for_local_adoption"
+---
+
 # Accessible Workspaces
 
-**A practical design and operations resource for accessible workplaces.** It supports workplace designers, facilities and estates teams, employers, managers, access professionals, disabled and neurodivergent workers, and AI systems involved in design or delivery.
+A practical design and operations resource for offices, production workrooms and shared workplaces. Review the connected journey: understanding the site, arrival, routes, necessary work, meetings and welfare facilities, support and safe departure. This supports workplace design/facilities teams, employers, access professionals, affected workers and AI-assisted drafting/review.
 
-The aim is to help teams identify and remove barriers across a connected workspace journey: understanding the site, arriving, reaching the work area, doing the work, using shared facilities, getting support, and leaving safely. An accessible workspace can enable people to access and participate in employment; it is one part of the wider employee experience, not a substitute for accessible recruitment, management, development or retention practices.
+## Start here
+
+1. Read the [21-item checklist](Accessible_Workspaces_Design_Checklist.md) and identify the actual project, jurisdiction, building use, work tasks, stage and operating conditions.
+2. Use [review and handover guidance](Workspace_Review_and_Handover.md) to establish relevant roles, safe participation, interim access and verification. A manager coordinating support is not automatically the owner controlling a route or system.
+3. Record evidence and its limitations using the five review statuses and separate check results. The [record guide](Workspace_Review_and_Handover.md#record-progress-and-evidence-separately) explains the distinctions.
+4. If structured records are useful, use the [JSON Schema](workspace-finding.schema.json) and [blank illustrative example](workspace-finding.example.json). Null means unassigned, not approved or complete. Completed sensitive records belong outside this public repository.
+5. For AI assistance, read [AGENTS.md](AGENTS.md) and [terminology alignment](Terminology_Alignment.md). Revisit affected tasks after changes, reported barriers or implementation.
 
 ## Repository contents
 
-- [Accessible Workspaces Design Checklist](Accessible_Workspaces_Design_Checklist.md): 21 stable, practice-oriented prompts for reviewing a workspace journey.
-- [AGENTS.md](AGENTS.md): operating rules for AI agents and automated systems supporting workplace design and delivery.
-- [Workspace finding schema](workspace-finding.schema.json): JSON Schema for recording findings, evidence, actions and verification in a consistent, machine-readable form.
-- [LICENSE](LICENSE): MIT License.
+| Resource | Purpose and status |
+| --- | --- |
+| [Accessible Workspaces Design Checklist](Accessible_Workspaces_Design_Checklist.md) | AW-01–AW-21 across orientation, routes, work/facilities, support and emergency/review considerations. |
+| [AGENTS.md](AGENTS.md) | Versioned agent guidance, scope/authority/privacy boundaries, evidence handling and outputs for local adoption. |
+| [Review and handover guidance](Workspace_Review_and_Handover.md) | Local delivery roles, progress/results, meeting/event setups, verification and review. |
+| [Finding schema](workspace-finding.schema.json) | JSON Schema Draft 2020-12 for local record structure and conditional requirements. It is not evidence or an installed validator. |
+| [Blank finding example](workspace-finding.example.json) | Structurally valid illustration with unassigned values; not an actual workspace review. |
+| [Terminology alignment](Terminology_Alignment.md) | Shared Double-FW meanings, source-owned identifiers and evidence distinctions. |
+| [Related public guidance](Related_Double_FW_Guidance.md) | Optional public HR/lifecycle, governance, QA, cognitive UX, data ethics and document resources. |
+| [NOTICE](NOTICE.md) and [LICENSE](LICENSE) | Attribution, source/evidence boundaries and sole project licence: MIT. |
 
-## How to use the checklist
+## Scope, evidence and safety
 
-1. Read [AGENTS.md](AGENTS.md) before using an AI system to plan, review or change workspace design or delivery processes.
-2. Establish the project, jurisdiction, building use, work tasks, relevant users, decision owners and applicable requirements.
-3. Review each applicable item with people who use, maintain or deliver the workspace. Invite disabled and neurodivergent people to contribute without requiring diagnosis or public disclosure.
-4. Record a status, evidence and its limits, action owner, due date and verification. Use the [finding schema](workspace-finding.schema.json) when storing records in a system that supports structured data.
-5. Recheck after refurbishment, relocation, changes to furniture or room use, new booking or security systems, changes of role, or reports of a barrier.
+These are review prompts and proposed good practice for local adoption, not an adopted employer policy, complete professional access assessment, technical specification, legal advice or approval. The England-oriented source routes do not determine every project’s jurisdiction, premises use, construction/alteration or operational obligations. Establish applicable requirements with the responsible people and appropriate current primary sources.
 
-A tick or “Works as intended” status means the feature was checked in practice for the relevant location, task and people. It does not establish legal compliance or prove that every person can use the space. Record “Not applicable” with a rationale; use “Not assessed” when there is not enough evidence.
+Keep progress, scoped check results, proposed actions and actual decisions separate. In progress means unknown for the parent item, not a partial pass. Works as intended requires actual scoped verification and does not mean universally accessible or legally compliant. Not applicable needs a rationale and an accepted applicability decision; missing evidence is not an exemption. A credible reported barrier remains evidence even without direct observation.
 
-## Scope and status of guidance
+Use safe, proportionate walkthroughs, reports and representative work tasks; a full-shift trial is not automatically required. Do not ask someone to use an unsafe route, attempt a transfer or demonstrate an emergency failure. Dimensions, lifting/transfer equipment, tactile/acoustic/light design and fire/evacuation arrangements need relevant competent input. This checklist does not design or approve them. Keep necessary interim access while decisions are resolved.
 
-This repository focuses on **physical and operational workspace access** in offices, production workrooms and other shared workspaces. It is written with workplace accessibility in England in mind. Building requirements and employment duties vary by jurisdiction, building use, alterations and circumstances. The checklist items are project review prompts and good-practice recommendations; they may help identify a duty, but they are not themselves statements of law or proof of compliance. Confirm current requirements with competent professionals and the responsible human decision-makers.
+Physical and digital dependencies both matter. A route or room review does not establish the accessibility of booking, entry or work software, and a clean digital scan does not certify a physical site. P/N/C labels are broad scanning tags, not diagnoses or a complete taxonomy. Respect individual choice, Deaf and neurodivergent identities, privacy and dignity.
 
-Use related guidance for connected parts of the experience:
+## References
 
-- [Disabled Employee Lifecycle](https://github.com/Double-FW/Disabled-Employee-Lifecycle) covers accessibility across recruitment, onboarding, day-to-day work, progression, retention and exit. Use it to place workspace access within the wider employment journey.
-- [Organisation Governance and Strategy](https://github.com/Double-FW/Organisation_Governance_and_Strategy) supports ownership, policy and organisational governance. Its [Accessibility RACI](https://github.com/Double-FW/Organisation_Governance_and_Strategy/blob/main/Accessibility%20RACI.md) can help assign responsibilities for findings and decisions.
-- [Inclusive Corporate Events](https://github.com/Double-FW/Inclusive-Corporate-Events) covers event journeys for attendees, presenters and staff. Use it when a workspace hosts conferences, meetings or other corporate events.
+The following primary/practitioner routes support project-specific enquiry. Their availability/publication scope was checked selectively during the 22 November 2026 editorial revision; no full technical standards review, legal-applicability decision or site inspection is claimed. Confirm current editions, amendments, jurisdiction, premises use and actual requirements before a live decision.
 
-## Reference material
+- [Approved Document M](https://www.gov.uk/government/publications/access-to-and-use-of-buildings-approved-document-m): use the relevant volume and amendments; Volume 2 concerns buildings other than dwellings in its stated scope.
+- [HSE disabled workers and employer duties](https://www.hse.gov.uk/disability/employers-duties/index.htm), [DSE assessment](https://www.hse.gov.uk/msd/dse/assessment.htm) and [workplace facilities](https://www.hse.gov.uk/simple-health-safety/workplace-facilities/health-safety.htm).
+- [Acas reasonable adjustments](https://www.acas.org.uk/reasonable-adjustments) and [neurodiversity adjustments](https://www.acas.org.uk/reasonable-adjustments/adjustments-for-neurodiversity).
+- [BSI PAS 6463](https://www.bsigroup.com/en-GB/insights-and-media/insights/brochures/pas-6463-design-for-the-mind-neurodiversity-and-the-built-environment/) and [RNIB Building Sight, 2023 PDF](https://www.rnib.org.uk/documents/3205/Building_Sight_2023_lGasFEr.pdf): source publications retain their own rights; the references are not copied standards clauses or a substitute for competent design advice.
+- [GOV.UK means of escape for disabled people, accessible version](https://www.gov.uk/government/publications/fire-safety-risk-assessment-means-of-escape-for-disabled-people/fire-safety-risk-assessment-means-of-escape-for-disabled-people-accessible-version): check scope and actual fire-safety arrangements with the responsible competent roles.
 
-- [Approved Document M, Volume 2](https://www.gov.uk/government/publications/access-to-and-use-of-buildings-approved-document-m)
-- [HSE: disabled workers and employer duties](https://www.hse.gov.uk/disability/employers-duties/index.htm)
-- [HSE: display screen equipment assessment](https://www.hse.gov.uk/msd/dse/assessment.htm)
-- [Acas: reasonable adjustments](https://www.acas.org.uk/reasonable-adjustments)
-- [Acas: adjustments for neurodiversity](https://www.acas.org.uk/reasonable-adjustments/adjustments-for-neurodiversity)
-- [BSI: PAS 6463 and design for the mind](https://www.bsigroup.com/en-GB/insights-and-media/insights/brochures/pas-6463-design-for-the-mind-neurodiversity-and-the-built-environment/)
-- [RNIB: Building Sight](https://www.rnib.org.uk/living-with-sight-loss/independent-living/building-sight/)
-- [GOV.UK: means of escape for disabled people](https://www.gov.uk/government/publications/fire-safety-risk-assessment-means-of-escape-for-disabled-people/fire-safety-risk-assessment-means-of-escape-for-disabled-people)
+Use [related public Double-FW guidance](Related_Double_FW_Guidance.md) for broader employee lifecycle and organisational support. This checklist does not cover every recruitment, career, retention or event-organising task. Local responsibility and meeting guidance is available here without private repository dependencies.
 
-Check that sources remain current before relying on them for a live project.
+## Agent, retrieval and training use
 
-## Contributing
+Retain whole AW prompts, context, evidence/authority limits, source revision and item IDs. Do not silently truncate a multi-part item or mistake the schema/example for completed employee evidence. A future export needs an explicit inventory of substantive Markdown, JSON Schema and example files, rights/privacy checks and deliberate treatment of overlapping representations. Linked source bodies are not automatically imported. No model, retrieval service, validator service or Hugging Face sync is installed at this revision.
 
-When proposing a change, identify the checklist item or journey stage it affects; use practical language that can be reviewed in context; preserve stable item IDs; distinguish legal or contractual requirements from guidance and recommendations; and include authoritative sources for new claims. Update the schema and agent guidance when changes affect machine-readable records or operating rules. Include a rationale and review date in the pull request.
+Keep personal, health, adjustment, identifying case information, credentials and confidential site/security details out of public content and datasets. Use actual approved restricted record arrangements; none is configured by this repository. A schema cannot verify that free text is non-identifying or that evidence/authority is genuine.
 
-## Document control
+## Maintenance and licence
 
-- Version: 1.1.0
-- Review date: 16 October 2026
-- Review cycle: annually and after material changes to workplace systems, relevant guidance or repository scope
-- Repository owner: Double FW
-- Language: en-GB
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+Preserve AW-01–AW-21 and keep the checklist, agent guidance, schema, example, README and references consistent. Version changes, editorial checks, actual inspections and approvals are distinct; a merge or export does not renew evidence or adopt policy. MIT, copyright 2026 Double FW Ltd. See [LICENSE](LICENSE) and [NOTICE](NOTICE.md); external works retain their rights.
