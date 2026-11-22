@@ -1,0 +1,636 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Workspace finding record",
+  "description": "Local structural contract, version 1.0.0. No claim of evidence truth, professional inspection, safety, compliance, privacy enforcement or human authority. Never store sensitive case/site information in a public example.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_state",
+    "project_reference",
+    "item_id",
+    "jurisdiction",
+    "building_use",
+    "location_and_task",
+    "status",
+    "check_result",
+    "applicability_reason",
+    "finding",
+    "evidence",
+    "proposed_actions",
+    "human_decision",
+    "verification",
+    "review_trigger"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_state": {
+      "enum": [
+        "draft",
+        "illustrative",
+        "recorded"
+      ]
+    },
+    "project_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "item_id": {
+      "enum": [
+        "AW-01",
+        "AW-02",
+        "AW-03",
+        "AW-04",
+        "AW-05",
+        "AW-06",
+        "AW-07",
+        "AW-08",
+        "AW-09",
+        "AW-10",
+        "AW-11",
+        "AW-12",
+        "AW-13",
+        "AW-14",
+        "AW-15",
+        "AW-16",
+        "AW-17",
+        "AW-18",
+        "AW-19",
+        "AW-20",
+        "AW-21",
+        null
+      ]
+    },
+    "jurisdiction": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "building_use": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "location_and_task": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "not_assessed",
+        "in_progress",
+        "works_as_intended",
+        "barrier_found",
+        "not_applicable"
+      ]
+    },
+    "check_result": {
+      "enum": [
+        "not_tested",
+        "unknown",
+        "pass",
+        "fail",
+        "not_applicable"
+      ]
+    },
+    "applicability_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "finding": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "reference",
+          "captured_on",
+          "limits"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "observation",
+              "measurement",
+              "participant_report",
+              "source_review",
+              "supplier_claim",
+              "test",
+              "consultation"
+            ]
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "captured_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "limits": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "proposed_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "owner_role",
+          "assignment_status",
+          "assignment_reference",
+          "due_on",
+          "dependencies",
+          "verification_plan"
+        ],
+        "properties": {
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner_role": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "assignment_status": {
+            "enum": [
+              "proposed",
+              "unknown",
+              "confirmed"
+            ]
+          },
+          "assignment_reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "due_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "verification_plan": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "assignment_status": {
+                  "const": "confirmed"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "owner_role": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "assignment_reference": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "human_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "role",
+        "reference",
+        "decided_on"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "pending",
+            "accepted",
+            "rejected",
+            "not_required"
+          ]
+        },
+        "role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decided_on": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "accepted",
+                  "rejected"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reference": {
+                "type": "string",
+                "minLength": 1
+              },
+              "decided_on": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "checked_on",
+        "scope_and_limits"
+      ],
+      "properties": {
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "checked_on": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "scope_and_limits": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "review_trigger": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "not_assessed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "check_result": {
+            "const": "not_tested"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "in_progress"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "check_result": {
+            "const": "unknown"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "works_as_intended"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "check_result": {
+            "const": "pass"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "barrier_found"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "check_result": {
+            "const": "fail"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "not_applicable"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "check_result": {
+            "const": "not_applicable"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_state": {
+            "const": "recorded"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "project_reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "jurisdiction": {
+            "type": "string",
+            "minLength": 1
+          },
+          "building_use": {
+            "type": "string",
+            "minLength": 1
+          },
+          "location_and_task": {
+            "type": "string",
+            "minLength": 1
+          },
+          "item_id": {
+            "enum": [
+              "AW-01",
+              "AW-02",
+              "AW-03",
+              "AW-04",
+              "AW-05",
+              "AW-06",
+              "AW-07",
+              "AW-08",
+              "AW-09",
+              "AW-10",
+              "AW-11",
+              "AW-12",
+              "AW-13",
+              "AW-14",
+              "AW-15",
+              "AW-16",
+              "AW-17",
+              "AW-18",
+              "AW-19",
+              "AW-20",
+              "AW-21"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "works_as_intended",
+              "barrier_found"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "evidence": {
+            "minItems": 1
+          },
+          "finding": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "works_as_intended"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "verification": {
+            "properties": {
+              "method": {
+                "type": "string",
+                "minLength": 1
+              },
+              "checked_on": {
+                "type": "string",
+                "format": "date"
+              },
+              "scope_and_limits": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "not_applicable"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "applicability_reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "human_decision": {
+            "properties": {
+              "state": {
+                "const": "accepted"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "works_as_intended",
+              "barrier_found",
+              "not_applicable"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "project_reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "jurisdiction": {
+            "type": "string",
+            "minLength": 1
+          },
+          "building_use": {
+            "type": "string",
+            "minLength": 1
+          },
+          "location_and_task": {
+            "type": "string",
+            "minLength": 1
+          },
+          "item_id": {
+            "enum": [
+              "AW-01",
+              "AW-02",
+              "AW-03",
+              "AW-04",
+              "AW-05",
+              "AW-06",
+              "AW-07",
+              "AW-08",
+              "AW-09",
+              "AW-10",
+              "AW-11",
+              "AW-12",
+              "AW-13",
+              "AW-14",
+              "AW-15",
+              "AW-16",
+              "AW-17",
+              "AW-18",
+              "AW-19",
+              "AW-20",
+              "AW-21"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "$comment": "Use a Draft 2020-12 validator with format checking where dates matter. This file installs no validation service or control system."
+}
