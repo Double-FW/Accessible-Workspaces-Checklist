@@ -1,0 +1,30 @@
+{
+  "source_repository": "Double-FW/Accessible-Workspaces-Checklist",
+  "destination_dataset": "GarethFW/Accessible_Workspace_Design",
+  "source_files": [
+    "AGENTS.md",
+    "Accessible_Workspaces_Design_Checklist.md",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md",
+    "Related_Double_FW_Guidance.md",
+    "Terminology_Alignment.md",
+    "Workspace_Review_and_Handover.md",
+    "workspace-finding.example.json",
+    "workspace-finding.schema.json"
+  ],
+  "document_files": [
+    "README.md",
+    "AGENTS.md",
+    "Accessible_Workspaces_Design_Checklist.md",
+    "Workspace_Review_and_Handover.md",
+    "Terminology_Alignment.md",
+    "Related_Double_FW_Guidance.md",
+    "NOTICE.md"
+  ],
+  "resource_files": [
+    "workspace-finding.schema.json",
+    "workspace-finding.example.json"
+  ],
+  "approved_license_sha256": "718328364da5d7ba8e2fe2b00e16126f46714ef2d2e9d16b04cf2706d48142f1"
+}
